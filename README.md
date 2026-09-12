@@ -1,40 +1,61 @@
-## Firebase and order email setup
+# E-Commerce Mobile App
 
-The Flutter app uses Firebase Authentication for email/password login and Cloud Firestore for authenticated order history. SMTP credentials must remain on a server; the app calls the web app's deployed `/api/order` endpoint through `ORDER_API_URL`.
+A modern Flutter e-commerce mobile application built to provide a complete shopping experience, including product browsing, authentication, cart management, checkout, and order history.
 
-1. Create or select a Firebase project and enable **Authentication > Email/Password** and Firestore.
-2. Copy `.env.example` to `.env` and fill in the Firebase app values and your deployed web order endpoint:
+The application uses Firebase Authentication for user authentication and Cloud Firestore for authenticated order history. Checkout communicates with a deployed web API for order processing and email notifications.
 
-```bash
-cp .env.example .env
-```
+## Features
 
-3. Configure the web app's server environment with `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASSWORD`, and `SMTP_FROM`. Do not put SMTP credentials in Flutter or `--dart-define` values.
-4. Apply Firestore rules that restrict orders to their authenticated owner:
+- Browse and explore products
+- Product search
+- Product categories
+- Add products to cart
+- Increase/decrease product quantities
+- Remove products from cart
+- Wishlist/favorites
+- User registration and login
+- Authenticated user experience
+- Order history
+- Checkout flow
+- Order email notifications
+- Internet connectivity detection
+- Local data persistence
+- Localization support
+- Responsive Flutter UI
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Flutter | Cross-platform mobile application framework |
+| Dart | Programming language |
+| Riverpod | State management |
+| Firebase Authentication | User authentication |
+| Cloud Firestore | Order history and user data |
+| HTTP | API communication |
+| SharedPreferences | Local storage |
+| flutter_dotenv | Environment configuration |
+| Dartz | Functional programming utilities |
+| Equatable | Value equality |
+| Flutter SVG | SVG asset rendering |
+| Intl | Internationalization and formatting |
+
+## Project Structure
 
 ```text
-match /orders/{orderId} {
-	allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
-	allow read: if request.auth != null && resource.data.userId == request.auth.uid;
-	allow update, delete: if false;
-}
-```
-
-The app loads `.env` at startup. Without Firebase values, it launches in guest mode. Without `ORDER_API_URL`, checkout displays a configuration error and does not clear the cart. Firebase client keys are bundled into the mobile app and should be protected with Firebase Auth and Firestore rules; SMTP credentials must never be placed in `.env`.
-
-# flutter_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ecommerce-Mobile-App/
+├── android/                # Android platform files
+├── ios/                    # iOS platform files
+├── linux/                  # Linux platform files
+├── macos/                  # macOS platform files
+├── web/                    # Web platform files
+├── lib/                    # Main Flutter application
+├── test/                   # Tests
+├── assets/
+│   ├── images/
+│   ├── images/products/
+│   └── icons/
+├── .env                    # Local environment configuration
+├── pubspec.yaml            # Flutter dependencies and configuration
+├── pubspec.lock
+└── README.md
