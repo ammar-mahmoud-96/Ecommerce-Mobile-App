@@ -10,11 +10,11 @@ The application uses Firebase Authentication for user authentication and Cloud F
   <tbody>
     <tr>
       <td><img width="200px" src="https://github.com/ammar-mahmoud-96/Ecommerce-Mobile-App/blob/main/assets/Screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-09-12%20at%2022.16.23.png?raw=true"/>
-</div>/td>
+/td>
       <td><img width="200px" src="https://raw.githubusercontent.com/ammar-mahmoud-96/Ecommerce-Mobile-App/main/assets/Screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-09-12%20at%2022.16.09.png"/>
 </td>
      <td><img width="200px" src="https://github.com/ammar-mahmoud-96/Ecommerce-Mobile-App/blob/main/assets/Screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-09-12%20at%2022.16.50.png?raw=true"/>
-</div>/td>
+/td>
     </tr>
     <tr>
       <td><img width="200px" src="https://github.com/ammar-mahmoud-96/Ecommerce-Mobile-App/blob/main/assets/Screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-09-12%20at%2022.16.35.png?raw=true"></td>
